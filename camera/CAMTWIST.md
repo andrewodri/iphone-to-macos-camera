@@ -1,4 +1,4 @@
-I'm on macOS Catalina 10.15.3, so by all measures this shouldn't work due to code signing and SIP, but it does, and it's really easy. I suspect that is becuase Zoom are bosses when it comes to going out of there way to ensure compatibility. Here are the requirements:
+This method is crazy simple... The only hiccup you might encounter is having to [jump through some of macOS Catalina's new security hoops](https://support.apple.com/en-ca/HT202491). Here are the requirements:
 
 * **macOS**: Download and install Zoom.us: https://zoom.us/download
 * **macOS**: Download and install CamTwist Studio: http://camtwiststudio.com/download/

@@ -14,6 +14,8 @@ _**Note**: All of these techniques try to take advantage of direct connections b
 
 This is intended to be become a list of all various ways you can configure an iOS device as a webcam/camera. Hopefully it'll inspire the development of some more elegant solutions as time goes on.
 
+You may also be thinking what I did the first couple of times I saw this... I'm on macOS Catalina 10.15.3, so CamTwist will not work due to code signing and SIP. It does, and it's really easy. I suspect that part of the solution is install these apps the old-school way; i.e. not using the App Store. If you haven't install an app this way for a while, it might seem like macOS gives you a hard no when you attempt to open one of these apps. **You will need to [go to System Preferences, Security & Privacy, General, and select Open Anyway](https://support.apple.com/en-ca/HT202491) _after_ getting denied in order to proceed.** After you've done that, you'll be able to open the app normally moving forward.
+
 * [Less configuration, less polished result](camera/CAMTWIST.md) (Using only CamTwist)
 * [More configuration, more polished result](camera/OBS+CAMTWIST.md) (Using OBS Studio and CamTwist)
 
