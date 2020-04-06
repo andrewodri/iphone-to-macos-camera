@@ -1,11 +1,11 @@
 This is just-as-if-not-more-so janky as the previous method, but it relies on a video stream overe USB from the iPhone rather than screen sharing, which is then processed by some real broadcast software. What does that mean? It'll chew up way more resources, but you have options for much higher resolution video (i.e. 4K), and you won't have issues with notifications or extra artifacts in your feed. Here are the requirements:
 
-* **Hardware**: Purchase and install an HDMI dummy plug: https://www.amazon.ca/gp/product/B0788HYC1S/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&th=1 **~$10.99** _(Fast delivery despite COVID-19!)_
-* **iOS**: Download and install Camera for OBS Studio (iOS): https://apps.apple.com/ca/app/camera-for-obs-studio/id1352834008 **$21.99**
-* **macOS**: Download and install OBS Studio (macOS): https://obsproject.com/download
-* **macOS**: Download and install iOS Camera plugin for OBS Studio (macOS): https://obs.camera/docs/getting-started/ios-camera-plugin-usb/
-* **macOS**: Download and install Zoom.us: https://zoom.us/download
-* **macOS**: Download and install CamTwist Studio: http://camtwiststudio.com/download/
+* **Hardware**: Purchase and install an [HDMI dummy connector](https://www.amazon.ca/gp/product/B0788HYC1S/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&th=1): **~$10.99** _(Fast delivery despite COVID-19!)_
+* **iOS**: Download and install [Camera for OBS Studio](https://apps.apple.com/ca/app/camera-for-obs-studio/id1352834008): **$21.99**
+* **macOS**: Download and install [OBS Studio](https://obsproject.com/download)
+* **macOS**: Download and install [iOS Camera plugin for OBS Studio](https://obs.camera/docs/getting-started/ios-camera-plugin-usb/)
+* **macOS**: Download and install [Zoom.us](https://zoom.us/download)
+* **macOS**: Download and install [CamTwist Studio](http://camtwiststudio.com/download/)
 
 ## On your iPhone...
 

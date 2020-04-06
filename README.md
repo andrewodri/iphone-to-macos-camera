@@ -8,7 +8,7 @@ You know there is a better way... You know you that 12-megapixel Sony Exmos RS c
 
 _**Note**: I wrote this for my own use... And right now I only use Zoom. This won't work with 1st-party apps like Facetime. Your milage may vary with other 3rd-party apps._
 
-_**Note**: All of these techniques try to take advantage of direct connections between the device and the host computer. This reduces the liklihood of connection errors, latency issues, and bottlenecks due to router performanbce or internet bandwidth limitations._
+_**Note**: All of these techniques try to take advantage of direct connections between the device and the host computer. This reduces the liklihood of connection errors, latency issues, and bottlenecks due to router performance or internet bandwidth limitations._
 
 ## Configuring your iPhone as a macOS camera
 

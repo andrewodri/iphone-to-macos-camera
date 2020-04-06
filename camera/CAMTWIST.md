@@ -1,16 +1,15 @@
 This method is crazy simple... The only hiccup you might encounter is having to [jump through some of macOS Catalina's new security hoops](https://support.apple.com/en-ca/HT202491). Here are the requirements:
 
-* **macOS**: Download and install Zoom.us: https://zoom.us/download
-* **macOS**: Download and install CamTwist Studio: http://camtwiststudio.com/download/
-* **iOS**: Download and install Hyperlapse: https://apps.apple.com/us/app/hyperlapse-from-instagram/id740146917
+* **macOS**: Download and install [Zoom.us](https://zoom.us/download)
+* **macOS**: Download and install [CamTwist Studio](http://camtwiststudio.com/download/)
+* **iOS**: Download and install [Hyperlapse](https://apps.apple.com/us/app/hyperlapse-from-instagram/id740146917) _(Why Hyperlapse? It is very very well supported, has great image stabilization for older iPhones, and most of all, it has a very simple uncluttered interface for screen sharing. It will also prevent your iPhone from automatically locking after a specific period of time.)_
 
 ## On your iPhone...
 
-1. Download and install Hyperlapse: https://apps.apple.com/us/app/hyperlapse-from-instagram/id740146917 _(Why Hyperlapse? It is very very well supported, has great image stabilization for older iPhones, and most of all, it has a very simple uncluttered interface for screen sharing.)_
-2. Enable Airplane mode, turn off Wi-fi, and turn off notifications _(This is so that you don't get notifications popping up over your camera, and don't have any unexpected updates downloading in the background choking up your connection.)_
-3. Open Hyperlapse, and configure it to point at whatever you want to show up on your camera
-4. Connect your iPhone to your Mac via USB
-5. When prompted with "Trust This Computer?", select "Trust" _(This is what allows the screen to be shared natively via USB with macOS.)_
+1. Enable Airplane mode, turn off Wi-fi, and turn off notifications _(This is so that you don't get notifications popping up over your camera, and don't have any unexpected updates downloading in the background choking up your connection.)_
+2. Open Hyperlapse, and configure it to point at whatever you want to show up on your camera
+3. Connect your iPhone to your Mac via USB
+4. When prompted with "Trust This Computer?", select "Trust" _(This is what allows the screen to be shared natively via USB with macOS.)_
 
 ## On your Mac...
 
