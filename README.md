@@ -25,3 +25,35 @@ This is another one of my specific use cases... I have a application that only h
 
 * [Over USB](https://support.zoom.us/hc/en-us/articles/201379235-iOS-Screen-Sharing-with-the-Zoom-Desktop-Client) (When an iOS camera **is not** being utilized)
 * [Over USB via AirPlay](screen-sharing/USB+AIRPLAY.md) (When an iOS camera **is** being utilized)
+
+## Solution imagineering
+
+The techniques below are high-level notes on a few existing and possibly compatible approaches that could used to put together a dedicated solution with the lowest possible overhead.
+
+The headings below will eventually get moved into the following documents:
+
+* [CoreMediaIO DAL Plug-in approach](camera/QVH+WEBCAMOID.md)
+* [Single-board-computer UVC gadget approach](camera/QVH+SBC-UVC.md)
+
+### Capturing video and audio from iOS via USB
+
+The best (i.e. most grokkable) implementation of video and audio capture I've seen to date is the [quicktime video hack](https://github.com/danielpaulus/quicktime_video_hack) project by [Daniel Paulus](https://github.com/danielpaulus). It's written in [Go](https://golang.org/), and outputs to [gstreamer](https://gstreamer.freedesktop.org/documentation/plugins_doc.html?gi-language=c), which makes output manipulation _extremely_ easy and flexible. The process it employs along with a changelog of challenges encountered and conquered is also available.
+
+From what I can tell, the things you need to do are:
+
+1. You need to enable ["Quicktime Capture" mode](https://github.com/danielpaulus/quicktime_video_hack/blob/master/doc/technical_documentation.md#13-hidden-configuration) via USB,
+2. [Work your way back from the gstreamer targets](https://github.com/danielpaulus/quicktime_video_hack/blob/master/screencapture/gstadapter/gst_adapter_macos.go) to get the least processed usable streams you need for integration
+
+### Creating a macOS virtual camera
+
+Virtual cameras are actually a bona-fide thing in macOS. They utilize [CoreMedia API "Device Abstraction Layer" (DAL) plug-ins](https://developer.apple.com/library/archive/samplecode/CoreMediaIO/Introduction/Intro.html), as opposed to the Hardware Abstraction Layer (HAL). If you have some installed, you can poke around here: `/Library/CoreMediaIO/Plug-Ins/DAL/YourFancyVirtualCamera.plugin/`
+
+While SIP prevents unsigned cameras from being used in 1st party apps in newer versions of macOS, they can be used with all 3rd party apps under Catalina (as far as I've tested at the time of writing anyway).
+
+[Webcamoid](https://github.com/webcamoid/webcamoid/) provides this functionality... It's clunky and leans hard into QT, so I'd probably need to convinced for using that code without heavy refactoring for a macOS specific solution. But it's the only open source thing out there that works. The code is pretty tough (for me) to grok, but from what I can tell, the party starts in the [IpcBridge](https://github.com/webcamoid/webcamoid/blob/4000735bd2f5678153b44d6133d1a9307964772a/libAvKys/Plugins/VirtualCamera/src/dshow/VCamIPC/src/ipcbridge.cpp).
+
+### Creating an SBC UVC camera device
+
+I feel like this could be a really slick solution... Provided performance was adequate, if a modified QVH could be run on a small SBC, like a Raspberry Pi Zero, and register as UVC camera, then you could have a sub-$20 adapter that registers as a hardware camera and gives macOS (and every other OS for that matter) a trusted camera device to work with.
+
+The only gotcha there is that there is very little high-level code that handles registration/de-registration as a gadget... This is a probably the place to start: https://stackoverflow.com/questions/42895950/usb-gadget-device-mode-configfs-uvc-and-mass-storage-on-single-configurat
