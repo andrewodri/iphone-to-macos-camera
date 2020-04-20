@@ -28,5 +28,5 @@ Follow these instructions to set up Zoom:
 That is all you need for bare-bones setup with Zoom! However, you may have a mid-week and week-end meeting where you have to look nice and act appropriately. It you close CamTwist at this point, you'll notice the camera has a cool looking test pattern, and an ugly looking logo on the top. Want that logo to go away? Here's how:
 
 1. Open Terminal
-2. Type in the following command, then press enter: `sudo zsh -c 'echo iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII= | base64 -d -o /Library/CoreMediaIO/Plug-Ins/DAL/CamTwist.plugin/Contents/Resources/splash.png'` _(This overwrites the "splash" image the camera uses with a 1x1px transparent PNG that was decoded from a base64 string.)_
+2. Type in the following command, then press enter: `sudo zsh -c 'echo iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII= | base64 -D -o /Library/CoreMediaIO/Plug-Ins/DAL/CamTwist.plugin/Contents/Resources/splash.png'` _(This overwrites the "splash" image the camera uses with a 1x1px transparent PNG that was decoded from a base64 string.)_
 3. Type in your password when prompted
