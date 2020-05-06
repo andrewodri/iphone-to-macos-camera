@@ -7,6 +7,8 @@ If you want to share your iPad's screen _and_ audio, then this may be an accepta
 1. Enable Airplane mode, turn off Wi-fi, and turn off notifications _(This is so that you don't get notifications popping up while screen sharing, and don't have any unexpected updates downloading in the background choking up your connection.)_
 2. Connect your iPad to your Mac via USB
 
+_**Tip:** New versions of iOS have mouse support. If you would like to set your iPad aside and control it via the Quicktime preview window, you may find pairing an extra mouse with the iPad is a good solution._
+
 ## On your Mac...
 
 1. Open System Preferences, select Sharing, and check Internet Sharing

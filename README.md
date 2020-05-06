@@ -14,10 +14,18 @@ _**Note**: All of these techniques try to take advantage of direct connections b
 
 This is intended to be become a list of all various ways you can configure an iOS device as a webcam/camera. Hopefully it'll inspire the development of some more elegant solutions as time goes on.
 
+You will need to meet one of two requirements in order for any of the processes to work:
+
+* You must use Zoom 4.6.8 or lower, as newer versions do not allow unsigned camera plugins (See #1); or
+* You must sign the Zoom and CamTwist apps using an Apple Developer ID certificate.
+
+(At the time of writing, the Zoom 4.6.8 client is still available for download here: https://us04web.zoom.us/client/4.6.19178.0323/Zoom.pkg)
+
 You may also be thinking what I did the first couple of times I saw this... I'm on macOS Catalina 10.15.3, so CamTwist will not work due to code signing and SIP. It does, and it's really easy. I suspect that part of the solution is install these apps the old-school way; i.e. not using the App Store. If you haven't install an app this way for a while, it might seem like macOS gives you a hard no when you attempt to open one of these apps. **You will need to [go to System Preferences, Security & Privacy, General, and select Open Anyway](https://support.apple.com/en-ca/HT202491) _after_ getting denied in order to proceed.** After you've done that, you'll be able to open the app normally moving forward.
 
 * [Less configuration, less polished result](camera/CAMTWIST.md) (Using only CamTwist)
-* [More configuration, more polished result](camera/OBS+CAMTWIST.md) (Using OBS Studio and CamTwist)
+* [More configuration, more polished result (1080p via hardware)](camera/OBS+CAMTWIST_1080P.md) (Using OBS Studio, CamTwist, and an HDMI dummy adapter)
+* [More configuration, more polished result (720p via software)](camera/OBS+CAMTWIST_720P.md) (Using OBS Studio, CamTwist, and crazy software configs)
 
 ## Screen sharing your iPad via Zoom for macOS
 
