@@ -16,9 +16,11 @@ This is just-as-if-not-more-so janky as the previous method, but it relies on a 
 
 ## On your Mac...
 
-Go to System Preferences, select Mission Control, then uncheck Displays have separate Spaces. You will need to log out, then log back in again. This removes the menu bar on the dummy display, so that we can extract the native 1080p video that is getting streamed to it without any unwanted visual artifacts. It also prevents apps from opening on second "display".
+_**Update:** As of OBS Studio 25.0.7, the OBS "Fullscreen Projector" now enters fullscreen mode differently than earlier versions. While the settings below allow earlier versions of OBS to display fulscreen video without artifacts, the opposite is true with newer versions._ 
 
-The command below should do the same thing, although your milage may vary:
+~~Go to System Preferences, select Mission Control, then uncheck Displays have separate Spaces. You will need to log out, then log back in again. This removes the menu bar on the dummy display, so that we can extract the native 1080p video that is getting streamed to it without any unwanted visual artifacts. It also prevents apps from opening on second "display".~~
+
+~~The command below should do the same thing, although your milage may vary:~~
 
 ```
 sudo defaults write com.apple.spaces spans-displays 1
