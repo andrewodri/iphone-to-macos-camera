@@ -20,7 +20,7 @@ function h2b64(hex)
 end
 
 function get_screen_width()
-  local handle = assert(io.popen("system_profiler -json SPDisplaysDataType 2>/dev/null | python -c \"import sys,json;d=next(i for i in json.load(sys.stdin)['SPDisplaysDataType'][0]['spdisplays_ndrvs'] if 'spdisplays_main' in i);print d['_spdisplays_pixels']\""))
+  local handle = assert(io.popen([[system_profiler -json SPDisplaysDataType 2>/dev/null | python -c "import sys,json;d=next(i for i in json.load(sys.stdin)['SPDisplaysDataType'][0]['spdisplays_ndrvs'] if 'spdisplays_main' in i);print d['_spdisplays_pixels']"]]))
   local screen_resolution = handle:read("*all")
   handle:close()
   return tonumber(string.match(screen_resolution, "^%d+"))
