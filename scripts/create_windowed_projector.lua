@@ -231,6 +231,32 @@ function update_camtwist_configuration()
   handle:close()
 end
 
+function self_sign_zoom()
+  local applescript = os.tmpname()
+  local handle = assert(io.open(applescript, 'w'))
+  handle:write([[
+  display dialog "A Terminal window will now be launched, and you will be prompted to enter your password.\n\nThis is required in order to self-sign Zoom, which will enable it to recognize the CamTwist virtual camera.\n\nEnter your password, then press Return." buttons {"Continue"}
+
+  tell application "Terminal"
+    activate
+    do script "sudo codesign -f -s - /Applications/zoom.us.app && kill -9 $$"
+    delay 5
+    repeat
+      try
+        do shell script "ps a | grep -v grep | grep 'sudo codesign -f -s - /Applications/zoom.us.app'"
+        delay 0.5
+      on error
+        exit repeat
+      end try
+    end repeat
+    close front window
+  end tell
+  ]])
+  handle:close()
+  os.execute(string.format("chmod +x %s && osascript %s", applescript, applescript))
+  os.remove(applescript)
+end
+
 function script_properties()
   local props = obs.obs_properties_create()
 
@@ -240,6 +266,7 @@ function script_properties()
   obs.obs_properties_add_button(props, "create_projector", "Create Windowed Projector", create_projector)
   obs.obs_properties_add_button(props, "create_camtwist", "Create CamTwist Profile", create_camtwist_profile)
   obs.obs_properties_add_button(props, "update_camtwist", "Update CamTwist Configuration", update_camtwist_configuration)
+  obs.obs_properties_add_button(props, "sign_zoom", "Self-sign Zoom Application", self_sign_zoom)
 
   return props
 end

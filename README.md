@@ -14,12 +14,13 @@ _**Note**: All of these techniques try to take advantage of direct connections b
 
 This is intended to be become a list of all various ways you can configure an iOS device as a webcam/camera. Hopefully it'll inspire the development of some more elegant solutions as time goes on.
 
-You will need to meet one of two requirements in order for any of the processes to work:
+If your video conferencing application does not allow access to virtual cameras (e.g. Zoom), you will need to self sign it. I've tested this on Zoom 5.0.2 _without an Apple Developer Certificate_, and it worked great. This can be done via the following command:
 
-* You must use Zoom 4.6.8 or lower, as newer versions do not allow unsigned camera plugins (See #1); or
-* You must sign the Zoom and CamTwist apps using an Apple Developer ID certificate.
+```
+sudo codesign -f -s - /Applications/zoom.us.app
+```
 
-(At the time of writing, the Zoom 4.6.8 client is still available for download here: https://us04web.zoom.us/client/4.6.19178.0323/Zoom.pkg)
+You will need to enter your password when prompted.
 
 You may also be thinking what I did the first couple of times I saw this... I'm on macOS Catalina 10.15.3, so CamTwist will not work due to code signing and SIP. It does, and it's really easy. I suspect that part of the solution is install these apps the old-school way; i.e. not using the App Store. If you haven't install an app this way for a while, it might seem like macOS gives you a hard no when you attempt to open one of these apps. **You will need to [go to System Preferences, Security & Privacy, General, and select Open Anyway](https://support.apple.com/en-ca/HT202491) _after_ getting denied in order to proceed.** After you've done that, you'll be able to open the app normally moving forward.
 
